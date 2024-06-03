@@ -41,10 +41,5 @@ namespace MyProject
                 Console.WriteLine("Insufficient stock to decrease.");
             }
         }
-
-        public override string ToString()
-        {
-            return $"ProductID: {ProductID}, ProductName: {ProductName}, Price: {Price}, Stock: {Stock}";
-        }
     }
 }

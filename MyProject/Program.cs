@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-
             Product product = new Product(100, "External Hard Drive", 79.99, 70);
 
             bool continueOperation = true;
@@ -15,6 +14,7 @@
                 Console.WriteLine("1. Increase stock");
                 Console.WriteLine("2. Decrease stock");
                 Console.WriteLine("3. Exit");
+                Console.WriteLine("\n");
 
                 string operationChoice = GetStringFromConsole("Enter your choice:");
 
@@ -38,12 +38,16 @@
 
         static void IncreaseStock(Product product)
         {
-            
+            int increaseAmount = GetIntegerFromConsole("Enter the amount to increase stock by:");
+            product.IncreaseStock(increaseAmount);
+            Console.WriteLine($"Stock increased by {increaseAmount}. New stock: {product.Stock} \n");
         }
 
         static void DecreaseStock(Product product)
         {
-           
+            int decreaseAmount = GetIntegerFromConsole("Enter the amount to decrease stock by:");
+            product.DecreaseStock(decreaseAmount);
+            Console.WriteLine($"Stock decreased by {decreaseAmount}. New stock: {product.Stock} \n");
         }
 
         static string GetStringFromConsole(string message)
@@ -68,6 +72,5 @@
             }
             return userInput;
         }
-
     }
 }
